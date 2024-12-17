@@ -1,0 +1,294 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Fondo claro */
+    color: lightgrey;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Filtro oscuro */
+    url("rust_202409_ttk_heroimage.jpg");
+    background-size: cover; /*Ajusta la imagen para cubrir toda la pantalla*/
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que la imagen quede fija mientras se hace scroll */
+    margin: 0; /* Elimina márgenes por defecto */
+    height: 100vh; /* Asegura que el fondo ocupe toda la altura de la pantalla */
+    text-align: center;
+}
+
+
+
+header {
+    
+    text-align: center;
+    
+    
+}
+h1 img {
+    width: 300px;
+    height: auto;
+}
+header p {
+    font-size: 1.5rem;
+}
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: #f4f4f4;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #00bcd4;
+}
+section {
+    padding: 20px;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border: 5px solid rgb(31, 31, 31);
+    display: inline-block;
+    border-radius: 30px;
+    padding: 8px;
+    background-color: rgba(16, 69, 112, 0.651)
+    
+}
+.members, .achievements, .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+.card {
+    background-color: #333;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Gradiente oscuro */
+        url("bandera_galicia.png"); /* Imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el div */
+    background-position: center; /* Centra la imagen dentro del div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); /* Sin sombra inicialmente */
+    transition: border 0.3s ease; /* Agrega una transición suave */
+    min-width: 250px; /* Asegura que el contenedor no sea más pequeño que 500px */
+}
+.card:hover{
+    box-shadow: 0 0 10px 5px rgba(52, 152, 219, 0.7); /* Sombra azul brillante cuando pasa el cursor */
+}
+
+
+
+/* Cuando el canal está offline */
+
+
+/* Cuando el canal está en línea */
+#mana.online {
+    border: 5px solid rgb(138, 3, 143); /* Borde verde cuando el canal está en línea */
+    box-shadow: 0 0 10px rgb(138, 3, 143); /* Sombra verde para resaltar */
+}
+
+/* Efecto hover (opcional) */
+#mana.online:hover {
+    box-shadow: 0 0 10px purple;
+    border-color: purple;
+}
+
+/* Cuando el canal está en línea */
+#grilo.online {
+    border: 5px solid rgb(138, 3, 143); /* Borde verde cuando el canal está en línea */
+    box-shadow: 0 0 10px rgb(138, 3, 143); /* Sombra verde para resaltar */
+}
+
+/* Efecto hover (opcional) */
+#grilo.online:hover {
+    box-shadow: 0 0 10px purple;
+    border-color: purple;
+}
+
+/* Cuando el canal está en línea */
+#galleta.online {
+    border: 5px solid rgb(138, 3, 143); /* Borde verde cuando el canal está en línea */
+    box-shadow: 0 0 10px rgb(138, 3, 143); /* Sombra verde para resaltar */
+}
+
+/* Efecto hover (opcional) */
+#galleta.online:hover {
+    box-shadow: 0 0 10px purple;
+    border-color: purple;
+}
+
+/* Círculo que indica estado */
+.status-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: -20px;
+    position: relative;
+    top: -10px;
+    left: 140px;
+}
+
+
+
+/* Estado conectado con animación */
+.status-circle.online {
+    background-color: red; /* Color inicial */
+    animation: blink 5s infinite; /* Parpadeo continuo */
+}
+
+/* Animación para el parpadeo */
+@keyframes blink {
+    0%, 50%, 100% {
+        background-color: red;
+    }
+    25%, 75% {
+        background-color: darkred;
+    }
+}
+@keyframes text-blink {
+    0%, 50%, 100% {
+        opacity: 1; /* Texto visible */
+    }
+    25%, 75% {
+        opacity: 0; /* Texto invisible */
+    }
+}
+
+/* Estilo para el texto LIVE */
+.live-status {
+    display: inline-block;
+    font-weight: bold;
+    color: #ff0000;
+    font-size: 30px;
+    text-transform: uppercase;
+    animation: text-blink 5s infinite; /* Animación con duración de 1.5 segundos */
+    position: relative; /* Permite mover el elemento */
+    top: -12px; /* Mueve el texto 20px hacia arriba */
+    left: 50px;
+}
+
+.card.online .live-status {
+    color: #ff0000;
+}
+
+
+
+.card2{
+    background-color: #333;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Gradiente oscuro */
+        url("bandera_castilla.png"); /* Imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el div */
+    background-position: center; /* Centra la imagen dentro del div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); /* Sin sombra inicialmente */
+    transition: border 0.3s ease; /* Agrega una transición suave */
+
+}
+
+.card3{
+    background-color: #333;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Gradiente oscuro */
+        url("bandera_murcia.png"); /* Imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el div */
+    background-position: center; /* Centra la imagen dentro del div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); /* Sin sombra inicialmente */
+    transition: border 0.3s ease; /* Agrega una transición suave */
+    
+
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    margin-top: 20px;
+}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Fondo claro */
+}
+
+/* Estilos para el nav */
+nav {
+    background-color: rgb(66, 66, 66);
+    padding: 5px 0; /* Espaciado superior e inferior */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+       
+    
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center; /* Centrado de los enlaces */
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+.nav-links a {
+    color: #000000; /* Color de texto oscuro */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #0d87d8; /* Rojo similar a Airbnb */
+    color: white; /* Cambia el color del texto cuando se pasa el ratón */
+}
+
+/* Añadir un efecto de barra activa (opcional) */
+.nav-links a.active {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+
+
+
+  

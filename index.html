@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>CLAN GZ</title>
+        <link rel="stylesheet" href="borrador.css">
+    </head>
+    <body>
+
+        <header>
+            <h1><img src="file.png" alt="Logo del Clan GZ"/></h1>
+            <p></p>
+        </header>
+        
+        <nav>
+            <!-- Barra de navegación con enlaces -->
+            <div class="nav-links">
+                <a href="#about">Nosotros</a>
+                <a href="#members">Miembros</a>
+                <a href="#recruitment">Reclutamiento</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </nav>
+        
+        <section id="about">
+            <h2 class="section-title">Nosotros</h2>
+            <p>Somos un clan de Rust (la mayoría gallegos) donde buscamos encontrar en cada wipe nuevas aventuras y retos imposibles</p>
+        </section>
+
+        <section id="members">
+            <h2 class="section-title">Miembros del Clan</h2>
+            <div class="members">
+                <div class="card" id="grilo" data-original-url="https://steamcommunity.com/profiles/76561198193102150/">
+                    <span class="status-circle offline"></span>
+                    <span class="live-status"></span>
+                    <h3>Grilo</h3>
+                    <p>IGL/Fragger</p>
+                </div>
+               
+                <div class="card" id="mana" data-original-url="https://steamcommunity.com/profiles/76561198057801246/">
+                    <span class="status-circle offline"></span>
+                    <span class="live-status"></span>
+                    <h3>GZ Maná</h3>
+                    <p>Electricista</p>
+                </div>
+               
+                <div class="card card2" onclick="window.location.href='https://steamcommunity.com/profiles/76561198012212938/';">
+                    <h3>|Nico|</h3>
+                    <p>Fragger</p>
+                </div>
+
+                <div class="card card3" onclick="window.location.href='https://steamcommunity.com/id/Puzzle1997/';">
+                    <h3>GZ Puzzle</h3>
+                    <p>Fragger</p>
+                </div>
+                
+                <div class="card" onclick="window.location.href='https://steamcommunity.com/profiles/76561199073153371/';">
+                    <h3>.R0M4</h3>
+                    <p>Builder</p>
+                </div>
+
+                <div class="card" id="galleta" data-original-url="https://steamcommunity.com/id/GZ_Galleta/">
+                    <span class="status-circle offline"></span>
+                    <span class="live-status"></span>
+                    <h3>Galleta</h3>
+                    <p>Fragger</p>
+                </div>
+
+                <div class="card" onclick="window.location.href='https://steamcommunity.com/profiles/76561199126587588/';">
+                    <h3>Nebbur</h3>
+                    <p>Farmer</p>
+                </div>
+
+                <div class="card" onclick="window.location.href='https://steamcommunity.com/id/Melonsita/';">
+                    <h3>Melonsita</h3>
+                    <p>Farmer</p>
+                </div>
+
+                <div class="card" onclick="window.location.href='https://steamcommunity.com/profiles/76561198199659958/';">
+                    <h3>pkeno</h3>
+                    <p>Beamer</p>
+                </div>
+
+                <div class="card" onclick="window.location.href='https://steamcommunity.com/profiles/76561198834464046/';">
+                    <h3>.Sunshine</h3>
+                    <p>IGL</p>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="multimedia">
+            <h2 class="section-title">Wipes pasados</h2>
+            <div class="achievements">
+                <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/26ahnA-7hOU" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+
+                
+            </div>
+        </section>
+        
+        <section id="recruitment">
+            <h2 class="section-title">Reclutamiento</h2>
+            <p>Estamos buscando nuevos miembros. Si eres apasionado por Rust y quieres formar parte de algo grande, ¡únete a nosotros!</p>
+            <p><strong>Requisitos:</strong> Tener micrófono, más de 100 horas en Rust, y disposición para trabajar en equipo.</p>
+        </section>
+        
+        <section id="contact">
+            <h2 class="section-title">Contacto</h2>
+            <p>Únete a nuestro Discord: <a href="https://discord.gg/qUaAVBB5" target="_blank">CLAN GZ</a></p>
+        </section>
+        
+        <footer>
+            <p>&copy; CLAN GZ. Todos los derechos reservados.</p>
+        </footer>
+        <script>
+            async function checkTwitchStatus(channelName, cardId, twitchUrl) {
+                const clientId = 'gp762nuuoqcoxypju8c569th9wz7q5';
+                const accessToken = 's4o5x2t4qk6ivqnytv2sz1xyxkaxb3';
+                
+                const url = `https://api.twitch.tv/helix/streams?user_login=${channelName}`;
+                const response = await fetch(url, {
+                    headers: {
+                        'Client-ID': clientId,
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+                
+                const data = await response.json();
+                const cardDiv = document.getElementById(cardId);
+                const statusCircle = cardDiv.querySelector('.status-circle');
+                const liveStatus = cardDiv.querySelector('.live-status');
+
+                if (data.data && data.data.length > 0) {
+                    cardDiv.classList.remove('offline');
+                    cardDiv.classList.add('online');
+                    statusCircle.classList.remove('offline');
+                    statusCircle.classList.add('online');
+                    liveStatus.textContent = 'LIVE';
+                    cardDiv.onclick = () => window.location.href = twitchUrl;
+                } else {
+                    cardDiv.classList.remove('online');
+                    cardDiv.classList.add('offline');
+                    statusCircle.classList.remove('online');
+                    statusCircle.classList.add('offline');
+                    liveStatus.textContent = '';
+                    cardDiv.onclick = () => window.location.href = cardDiv.dataset.originalUrl;
+                }
+            }
+
+            setInterval(() => {
+                checkTwitchStatus('mana_gz', 'mana', 'https://twitch.tv/mana_gz');
+                checkTwitchStatus('grilogz', 'grilo', 'https://twitch.tv/grilogz');
+                checkTwitchStatus('mgzgalleta', 'galleta', 'https://twitch.tv/mgzgalleta');
+            }, 60000);
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                checkTwitchStatus('mana_gz', 'mana', 'https://twitch.tv/mana_gz');
+                checkTwitchStatus('grilogz', 'grilo', 'https://twitch.tv/grilogz');
+                checkTwitchStatus('mgzgalleta', 'galleta', 'https://twitch.tv/mgzgalleta');
+            });
+            
+        </script>
+    </body>
+</html>
+
+
