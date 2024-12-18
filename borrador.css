@@ -181,6 +181,12 @@ section {
     color: #ff0000;
 }
 
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 40%; /* Asegura que la imagen se adapte a la pantalla */
+}
+
 
 
 .card2{
