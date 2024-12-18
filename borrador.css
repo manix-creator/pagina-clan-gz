@@ -187,6 +187,17 @@ img {
     max-width: 40%; /* Asegura que la imagen se adapte a la pantalla */
 }
 
+ul {
+    text-align: left;
+    margin-left: 20px;
+    padding-left: 20px;
+    background-color: #6e6e6eb0; /* Fondo claro para la lista */
+    display: inline-block; /* Ajusta el ancho al contenido */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+}
+
+
 
 
 .card2{
